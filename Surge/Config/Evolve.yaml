@@ -1,0 +1,257 @@
+# > Surge Config Make by Coldvvater
+# > TG Channel: https://t.me/Coldvvater_Channel
+# > GitHub: https://github.com/Coldvvater
+# > Update Date: 2024.07.28
+
+[General]
+# > 日志等级
+loglevel = notify
+
+# > Internet 测试 URL
+internet-test-url = http://www.aliyun.com
+# > 代理测速 URL
+proxy-test-url = http://www.apple.com/library/test/success.html
+# > 测试超时（秒）
+test-timeout = 5
+
+# > 自定义 GeoIP 数据库
+geoip-maxmind-url = https://raw.gitmirror.com/soffchen/GeoIP2-CN/release/Country.mmdb
+# > GeoIP 禁用自动更新
+disable-geoip-db-auto-update = false
+
+# IPv6 DNS 查询
+ipv6 = false
+# IPv6 VIF 模式
+ipv6-vif = disabled
+
+# > 增强版 Wi-Fi 助理
+# 在 Wi-Fi 网络不佳时尝试使用数据网络建立连接，请仅当使用不限量的数据流量时开启，默认关闭
+wifi-assist = false
+
+# > Wi-Fi 不是主接口则使用SSID组的默认策略
+use-default-policy-if-wifi-not-primary = false
+
+# > 混合网络 Hybrid Network（建议关闭、无限流量或者超出套餐流量不限速可选择开启）
+all-hybrid = false
+
+# > 允许 Wi-Fi 访问 (仅 iOS ）
+allow-wifi-access = true
+wifi-access-http-port = 6152
+wifi-access-socks5-port = 6153
+# > 允许个人热点访问
+allow-hotspot-access = true
+# > 允许 Wi-Fi 访问 (仅 macOS，若允许远程访问将「127.0.0.1」改为「0.0.0.0」)
+http-listen = 127.0.0.1:6152
+socks5-listen = 127.0.0.1:6153
+
+# > 系统代理接管优先
+compatibility-mode = 1
+
+# > 跳过代理
+skip-proxy = 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, 17.0.0.0/8, localhost, *.local, *.crashlytics.com, seed-sequoia.siri.apple.com, sequoia.apple.com
+
+# > 路由防火墙
+# 包含所有网络请求
+include-all-networks = false
+# 包含本地网络请求
+include-local-networks = false
+
+# > 当遇到 REJECT 策略时返回错误页
+show-error-page-for-reject = true
+
+# > 返回真实IP地址
+always-real-ip = *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com*.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, *.battlenet.com.cn, *.battlenet.com, *.blzstatic.cn, *.battle.net
+
+# > VIF Excluded Routes
+# Surge VIF 只能处理 TCP 和 UDP 协议。使用此选项可以绕过特定的 IP 范围，允许所有流量通过。
+# tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 239.255.255.250/32
+# > VIF Included Routes
+# 默认情况下，Surge VIF 接口会声明自己是默认路由。但是，由于 Wi-Fi 接口的路由较小，有些流量可能不会通过 Surge VIF 接口。使用此选项可以添加一条较小的路由。
+# tun-included-routes = 192.168.1.12/32
+
+# > 排除简单主机名
+exclude-simple-hostnames = true
+
+# > DNS 服务器
+dns-server = 223.5.5.5,119.29.29.29
+# > 加密 DNS 服务器(默认关闭，按需启用)
+encrypted-dns-server = https://223.5.5.5/dns-query,https://120.53.53.53/dns-query
+# > Hijack DNS
+hijack-dns = *:53
+# > 关闭 DOH 的服务端证书验证
+doh-skip-cert-verification = true
+# > etc/hosts 读取 DNS 记录
+read-etc-hosts = true
+# > 代理请求本地DNS映射
+use-local-host-item-for-proxy = false
+
+# > UDP IP 防泄漏
+# 如果没有代理服务器支持 UDP 转发，可修改为「direct」或注释下条，但需注意同一目标主机名 TCP 请求与 UDP 请求的源地址不同所造成的隐私及安全风险。
+udp-policy-not-supported-behaviour = REJECT
+
+# > 提高处理 UDP 流量优先级
+udp-priority = true
+
+# > 隐藏 VPN 图标
+hide-vpn-icon = false
+
+# > HTTP-API
+# (xxxxxx改成你自定义密码）
+http-api = xxxxxx@0.0.0.0:6171
+# > HTTP-API-TLS
+http-api-tls = false
+# > Web控制器
+http-api-web-dashboard = true
+
+[Proxy Group]
+# > 策略组
+# > 漏网之鱼
+Final = select, Proxy, DIRECT, no-alert=0, hidden=0, include-all-proxies=0
+
+# > 节点切换
+Proxy = select, Auto, Fallback, SSIDPolicy, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0, include-all-proxies=0
+
+# > 自动选择
+Auto = url-test, policy-path=此处填写订阅链接, url=http://www.apple.com/library/test/success.html, interval=600, update-interval=86400, tolerance=50
+
+# > 故障转移
+Fallback = fallback, interval=600, include-all-proxies=0, include-other-group="Auto"
+
+# > SSID策略
+SSIDPolicy = subnet, default = Auto, "此处改成你家里WiFi名称" = DIRECT, "此处改成你家里WiFi名称_5G" = DIRECT
+
+# > 国外网站
+Global = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > 人工智能
+AI = select, America, Japan, Singapore, TaiWan, Others, no-alert=0, hidden=0
+
+# > 油管视频
+YouTube = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > 奈飞影视
+NETFLIX = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > Disney+
+Disney+ = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > Emby
+Emby = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, DIRECT, no-alert=0, hidden=0
+
+# > 哔哩哔哩
+BiliBili = select, DIRECT, HongKong, TaiWan, no-alert=0, hidden=0
+
+# > Spotify
+Spotify = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, DIRECT, no-alert=0, hidden=0
+
+# > 网易云音乐
+NetEaseMusic = select, DIRECT, no-alert=0, hidden=0
+
+# > 海外抖音
+TikTok = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > 国际媒体
+Streaming = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > 电报信息
+Telegram = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > Twitter(X)
+Twitter = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > 苹果服务
+Apple = select, DIRECT, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > 谷歌服务
+Google = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, DIRECT, no-alert=0, hidden=0
+
+# > 微软服务
+Microsoft = select, DIRECT, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, no-alert=0, hidden=0
+
+# > 游戏平台
+Games = select, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, DIRECT, no-alert=0, hidden=0
+
+# > 香港节点
+HongKong = select, policy-regex-filter=港|🇭🇰|香港|HK|Hong, no-alert=0, hidden=0, include-all-proxies=0, include-other-group="Auto"
+
+# > 台湾节点
+TaiWan = select, policy-regex-filter=台|🇹🇼|台湾|TW|Tai, no-alert=0, hidden=0, include-all-proxies=0, include-other-group="Auto"
+
+# > 狮城节点
+Singapore = select, policy-regex-filter=坡|🇸🇬|新加坡|狮城|SG|Singapore, no-alert=0, hidden=0, include-all-proxies=0, include-other-group="Auto"
+
+# > 日本节点
+Japan = select, policy-regex-filter=日|🇯🇵|日本|JP|Japan, no-alert=0, hidden=0, include-all-proxies=0, include-other-group="Auto"
+
+# > 美国节点
+America = select, policy-regex-filter=美|🇺🇲|美国|US|States|American, no-alert=0, hidden=0, include-all-proxies=0, include-other-group="Auto"
+
+# > 其他节点
+Others = select, DIRECT, policy-regex-filter=^((?!🇭🇰|港|HK|Hong|🇹🇼|台|TW|Tai|🇯🇵|日|JP|Japan|🇸🇬|坡|狮城|SG|Singapore|🇺🇸|美|US|States|American).)*$, no-alert=0, hidden=0, include-all-proxies=0, include-other-group="Auto"
+
+[Rule]
+# > 规则分流
+# > GitHub RAW 加速
+DOMAIN,raw.gitmirror.com,Proxy
+
+# > 防止应用循环请求
+IP-CIDR,0.0.0.0/32,REJECT,no-resolve
+
+# > OpenAI
+RULE-SET,https://raw.gitmirror.com/Coldvvater/Mononoke/master/Surge/Rules/AI.list,AI
+
+# > 流媒体(以及其他未指定专属策略媒体)
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list,YouTube
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list,NETFLIX,extended-matching
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list,Disney+
+RULE-SET,https://raw.gitmirror.com/Repcz/Tool/X/Surge/Rules/Emby.list,Emby
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Bahamut/Bahamut.list,TaiWan
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBiliIntl/BiliBiliIntl.list,Streaming
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list,BiliBili
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Spotify/Spotify.list,Spotify
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/NetEaseMusic/NetEaseMusic.list,NetEaseMusic
+RULE-SET,https://raw.gitmirror.com/luestr/ProxyResource/main/Tool/Loon/Rule/TikTok.list,TikTok
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/GlobalMedia/GlobalMedia_All_No_Resolve.list,Streaming,extended-matching
+
+# > Telegram
+RULE-SET,https://raw.gitmirror.com/Coldvvater/Mononoke/master/Surge/Rules/Telegram.list,Telegram
+
+# > GitHub
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/GitHub/GitHub.list,Global
+
+# > Teitter(X)
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Twitter/Twitter.list,Twitter
+
+# > 苹果代理服务
+RULE-SET,https://raw.gitmirror.com/Coldvvater/Mononoke/master/Surge/Rules/AppleProxyService.list,Global
+
+# > 苹果服务
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All_No_Resolve.list,Apple,extended-matching
+
+# > 谷歌服务
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list,Google,extended-matching
+
+# > 微软服务
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list,Microsoft,extended-matching
+
+# > 游戏平台
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Game/Game.list,Games,extended-matching
+
+# > 国外网站
+RULE-SET,https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_All_No_Resolve.list,Global,extended-matching
+
+# > 系统请求
+RULE-SET,SYSTEM,DIRECT
+
+# > 局域网
+RULE-SET,LAN,DIRECT
+
+# > GEOIP China
+GEOIP,CN,DIRECT
+
+# > DNS 查询失败走 Final 规则
+FINAL,Final,dns-failed
+
+[MITM]
+# > MITM over HTTP/2
+h2 = true
