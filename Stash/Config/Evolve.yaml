@@ -1,0 +1,583 @@
+# Stash Config Make by Coldvvater
+# TG Channel: https://t.me/Coldvvater_Channel
+# GitHub: https://github.com/Coldvvater
+# Update Date: 2024.07.10
+
+# 通用设置
+mode: rule
+log-level: info
+# DNS模块
+dns:
+  default-nameserver:
+    - 114.114.115.115
+    - 119.28.28.28
+    - 223.6.6.6
+    - system
+  nameserver:
+    - https://223.5.5.5/dns-query
+    - https://120.53.53.53/dns-query
+  fake-ip-filter:
+    - .lan
+    - cable.auth.com
+    - '*.msftconnecttest.com'
+    - '*.msftncsi.com'
+    - network-test.debian.org
+    - detectportal.firefox.com
+    - resolver1.opendns.com
+    - '*.srv.nintendo.net'
+    - '*.stun.playstation.net'
+    - xbox.*.microsoft.com
+    - '*.xboxlive.com'
+    - stun.*
+    - global.turn.twilio.com
+    - global.stun.twilio.com
+    - localhost.*.qq.com
+    - localhost.*.weixin.qq.com
+    - '*.logon.battlenet.com.cn'
+    - '*.logon.battle.net'
+    - '*.blzstatic.cn'
+    - music.163.com
+    - '*.music.163.com'
+    - '*.126.net'
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - '*.kuwo.cn'
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - y.qq.com
+    - '*.y.qq.com'
+    - streamoc.music.tc.qq.com
+    - mobileoc.music.tc.qq.com
+    - isure.stream.qqmusic.qq.com
+    - dl.stream.qqmusic.qq.com
+    - aqqmusic.tc.qq.com
+    - amobile.music.tc.qq.com
+    - '*.xiami.com'
+    - '*.music.migu.cn'
+    - music.migu.cn
+    - proxy.golang.org
+    - '*.mcdn.bilivideo.cn'
+    - '*.cmpassport.com'
+    - id6.me
+    - open.e.189.cn
+    - mdn.open.wo.cn
+    - opencloud.wostore.cn
+    - auth.wosms.cn
+    - '*.jegotrip.com.cn'
+    - '*.icitymobile.mobi'
+    - '*.pingan.com.cn'
+    - '*.cmbchina.com'
+    - pool.ntp.org
+    - '*.pool.ntp.org'
+    - ntp.*.com
+    - ntp?.*.com
+    - time.*.com
+    - time?.*.com
+    - time.*.gov
+    - time.*.edu.cn
+    - '*.ntp.org.cn'
+    - PDC._msDCS.*.*
+    - DC._msDCS.*.*
+    - GC._msDCS.*.*
+    # 服务提供商:
+proxy-providers:
+  Subscribe:
+    url: http://your-service-provider # 用你的订阅链接替换
+    interval: 86400
+    benchmark-url: http://www.apple.com/library/test/success.html
+    benchmark-timeout: 5
+    # 功能分组
+proxy-groups:
+  - name: Final
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Final.png
+    proxies:
+      - Proxy
+      - DIRECT
+  - name: Proxy
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Rocket.png
+    proxies:
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: Auto
+    type: url-test
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Auto.png
+    include-all: true
+    tolerance: 50
+    interval: 300
+    lazy: true
+  - name: Fallback
+    type: fallback
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Available.png
+    include-all: true
+    interval: 300
+    lazy: true
+  - name: Global
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Global.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+      - DIRECT
+  - name: Mainland
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/China_Map.png
+    proxies:
+      - DIRECT
+      - Proxy
+      - Auto
+  - name: AI
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+    proxies:
+      - America
+      - Japan
+      - Singapore
+      - TaiWan
+      - Others
+  - name: YouTube
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: NETFLIX
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Netflix.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: Disney+
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Disney.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: Emby
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Emby.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+      - DIRECT
+  - name: BiliBili
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png
+    proxies:
+      - DIRECT
+      - HongKong
+      - TaiWan
+  - name: Spotify
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+      - DIRECT
+  - name: NetEaseMusic
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png
+    proxies:
+      - DIRECT
+  - name: TikTok
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/TikTok.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: Streaming
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Streaming.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: Telegram
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Telegram_X.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: X
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/X.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: Apple
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
+    proxies:
+      - DIRECT
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: Google
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+      - DIRECT
+  - name: Microsoft
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Windows_11.png
+    proxies:
+      - DIRECT
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+  - name: Games
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Game.png
+    proxies:
+      - Proxy
+      - Auto
+      - Fallback
+      - HongKong
+      - TaiWan
+      - Singapore
+      - Japan
+      - America
+      - Others
+      - DIRECT
+  # 基于地区分组
+  - name: HongKong
+    type: url-test
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: "港|🇭🇰|HK|(?i)Hong"
+    tolerance: 50
+    interval: 300
+    lazy: true
+  - name: TaiWan
+    type: url-test
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/China.png
+    include-all: true
+    filter: "台|🇨🇳|🇹🇼|湾|TW|(?i)Taiwan"
+    tolerance: 50
+    interval: 300
+    lazy: true
+  - name: Singapore
+    type: url-test
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+    include-all: true
+    filter: "新加坡|坡|狮城|🇸🇬|SG|(?i)Singapore"
+    tolerance: 50
+    interval: 300
+    lazy: true
+  - name: Japan
+    type: url-test
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Japan.png
+    include-all: true
+    filter: "日|🇯🇵|东京|JP|(?i)Japan"
+    tolerance: 50
+    interval: 300
+    lazy: true
+  - name: America
+    type: url-test
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/United_States.png
+    include-all: true
+    filter: "美|🇺🇲|US|(?i)States|American"
+    tolerance: 50
+    interval: 300
+    lazy: true
+  - name: Others
+    type: select
+    icon: https://raw.gitmirror.com/Koolson/Qure/master/IconSet/Color/Airport.png
+    filter: ^((?!香港|HK|Hong Kong|台湾|TW|TaiWan|新加坡|SG|Singapore|狮城|日本|JP|Japan|美国|US|States|American)).*$
+    include-all: true
+    # 规则引用
+rules:
+  - DOMAIN,raw.gitmirror.com,Proxy
+  - RULE-SET,private-domain,DIRECT
+  - RULE-SET,ai-classical,AI
+  - RULE-SET,youtube-domain,YouTube
+  - RULE-SET,netflix-domain,NETFLIX
+  - RULE-SET,disney-domain,Disney+
+  - RULE-SET,emby-classical,Emby
+  - RULE-SET,bahamut-domain,TaiWan
+  - RULE-SET,biliintl-domain,Streaming
+  - RULE-SET,bilibili-domain,BiliBili
+  - RULE-SET,spotify-domain,Spotify
+  - RULE-SET,neteasemusic-classical,NetEaseMusic
+  - RULE-SET,tiktok-domain,TikTok
+  - RULE-SET,streamingmedia-classical,Streaming
+  - RULE-SET,telegram-domain,Telegram
+  - RULE-SET,github-domain,Global
+  - RULE-SET,twitter-domain,X
+  - RULE-SET,apple-classical,Global
+  - RULE-SET,apple-domain,Apple
+  - RULE-SET,google-domain,Google
+  - RULE-SET,microsoft-domain,Microsoft
+  - RULE-SET,games-classical,Games
+  - RULE-SET,proxy-domain,Global
+  - RULE-SET,google-ip,Google
+  - RULE-SET,netflix-ip,NETFLIX
+  - RULE-SET,telegram-ip,Telegram
+  - RULE-SET,twitter-ip,X
+  - RULE-SET,cn-domain,DIRECT
+  - RULE-SET,bilibili-ip,BiliBili
+  - RULE-SET,apple-ip,Apple
+  - RULE-SET,private-ip,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,Final
+  # 远程规则集
+rule-providers:
+  private-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.list
+  private-ip:
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.list
+  ai-classical:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/Coldvvater/Mononoke/master/Clash/RuleSet/AI.list
+  youtube-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list
+  netflix-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.list
+  netflix-ip:
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.list
+  disney-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.list
+  emby-classical:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/Repcz/Tool/X/Surge/Rules/Emby.list
+  bahamut-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bahamut.list
+  biliintl-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/biliintl.list
+  bilibili-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.list
+  bilibili-ip:
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/bilibili.list
+  spotify-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.list
+  neteasemusic-classical:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Clash/NetEaseMusic/NetEaseMusic.list
+  tiktok-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.list
+  streamingmedia-classical:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.list
+  telegram-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list
+  telegram-ip:
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list
+  github-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.list
+  twitter-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.list
+  twitter-ip:
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.list
+  apple-classical:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/Coldvvater/Mononoke/master/Clash/RuleSet/AppleProxyService.list
+  apple-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list
+  apple-ip:
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.list
+  google-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.list
+  google-ip:
+    behavior: ipcidr
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.list
+  microsoft-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.list
+  games-classical:
+    behavior: classical
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.list
+  cn-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geosite/cn.list
+  proxy-domain:
+    behavior: domain
+    format: text
+    interval: 86400
+    url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.list
+http:
+  mitm:
+    - g.cn
+    - '*.google.cn'
+    - '*.google.com.hk'
+  url-rewrite:
+    - ^http://g\.cn https://www.google.com transparent
+    - ^https?://www\.google\.cn https://www.google.com 302
+    - ^https?:\/\/(www.)?(google)\.com.hk https://www.google.com 302
