@@ -210,7 +210,7 @@ rule-providers:
  private-ip: {<<: *i, path: ./ruleset/private-ip.list, url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.list}
 
 # 人工智能
- ai-classical: {<<: *c, path: ./ruleset/openai-classical.list, url: https://raw.gitmirror.com/Coldvvater/Mononoke/master/Clash/RuleSet/AI.list}
+ ai-classical: {<<: *c, path: ./ruleset/ai-classical.list, url: https://ghp.ci/https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Clash/Rules/AI.list}
 
 # 油管视频
  youtube-domain: {<<: *d, path: ./ruleset/youtube-domain.list, url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.list}
@@ -218,7 +218,7 @@ rule-providers:
 # 奈飞影视
  netflix-domain: {<<: *d, path: ./ruleset/netflix-domain.list, url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.list}
  
- netflix-ip: {<<: *i, path: ./ruleset/netflix-ip.list, url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.list}
+ netflix-ip: {<<: *i, path: ./ruleset/netflix-ip.mrs, url: https://ghp.ci/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs}
 
 # 迪士尼+
  disney-domain: {<<: *d, path: ./ruleset/disney-domain.list, url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/disney.list}
@@ -263,7 +263,7 @@ rule-providers:
  twitter-ip: {<<: *i, path: ./ruleset/twitter-ip.list, url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.list}
 
 # 苹果代理服务
- apple-classical: {<<: *c, path: ./ruleset/apple-classical.list, url: https://raw.gitmirror.com/Coldvvater/Mononoke/master/Clash/RuleSet/AppleProxyService.list}
+ apple-classical: {<<: *c, path: ./ruleset/apple-classical.list, url: https://ghp.ci/https://raw.githubusercontent.com/Coldvvater/Mononoke/master/Clash/Rules/AppleProxyService.list}
 
 # 苹果服务
  apple-domain: {<<: *d, path: ./ruleset/apple-domain.list, url: https://raw.gitmirror.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.list}
