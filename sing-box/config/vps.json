@@ -345,8 +345,10 @@
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        }
-        },
+              }
+      }
+    }
+  ]
        {
       "type": "direct",
       "tag": "direct"
