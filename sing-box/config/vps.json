@@ -349,7 +349,8 @@
         {
       "type": "direct",
       "tag": "direct"
-    },
+      }
+      },
   ],
   "route": {
     "rules": [
