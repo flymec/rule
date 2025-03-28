@@ -103,8 +103,7 @@
         "server-5",
         "server-6",
         "server-7",
-        "server-8",
-        "server-9"
+        "server-8"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -122,8 +121,7 @@
         "server-5",
         "server-6",
         "server-7",
-        "server-8",
-        "server-9"
+        "server-8"
       ]
     },
     {
@@ -138,8 +136,7 @@
         "server-5",
         "server-6",
         "server-7",
-        "server-8",
-        "server-9"
+        "server-8"
       ]
     },
     {
@@ -154,8 +151,7 @@
        "server-5",
        "server-6",
        "server-7",
-       "server-8",
-       "server-9"
+       "server-8"
       ]
     },
     {
@@ -170,8 +166,7 @@
         "server-5",
         "server-6",
         "server-7",
-        "server-8",
-        "server-9"
+        "server-8"
       ]
     },
     {
@@ -186,8 +181,7 @@
        "server-5",
        "server-6",
        "server-7",
-       "server-8",
-       "server-9"
+       "server-8"
       ]
     },
     {
@@ -202,8 +196,7 @@
        "server-5",
        "server-6",
        "server-7",
-       "server-8",
-       "server-9"
+       "server-8"
       ]
     },
     {
@@ -218,246 +211,142 @@
         "server-5",
         "server-6",
         "server-7",
-        "server-8",
-        "server-9"
+        "server-8"
       ]
     },
     {
       "tag": "server-1",
-   "type": "hysteria2",
-  "server": "45.62.116.246",
-  "server_port": 48555,
-  "password": "hSFHF9L8fu",
-  "obfs": {
-    "type": "salamander",
-    "password": "hsafsfjafs"
-  },
-  "tls": {
-    "enabled": true,
-    "server_name": "45.62.116.246",
-    "insecure": true
-  }
-},
+      "type": "trojan",
+      "server": "45.62.116.246",
+      "server_port": 14454,
+      "password": "IzcW1Mz7be",
+      "tls": {
+        "enabled": true,
+        "server_name": "45.62.116.246",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
+    },
     {
       "tag": "server-2",
-   "type": "vless",
-  "server": "45.62.116.246",
-  "server_port": 31778,
-  "uuid": "ac50fd2a-8651-4a71-b588-dd349f1c1197",
-  "transport": {
-    "type": "ws",
-    "headers": {},
-    "path": "/"
-  }
+      "type": "vless",
+      "server": "45.62.116.246",
+      "server_port": 31778,
+      "uuid": "b0c3ed0c-111f-4cf6-eb30-6df59bb6b292",
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
     },
     {
-    "__id_in_gui": "ID_1nqm4kn3",
-    "obfs": {
-      "password": "adadfsfadsa",
-      "type": "salamander"
-    },
-    "password": "hSFHF9L8fu",
-    "server": "45.62.116.246",
-    "server_port": 58249,
-    "tag": "server-3",
-    "tls": {
-      "ech": {
-        "config": [
-          "-----BEGIN ECH CONFIGS-----",
-          "ADn+DQA1AAAgACAuXmkyANHFeEXFFDN0HCpnMrylPtVHWuH+9JUByVAJbAAIAAEA",
-          "AQABAAMAAicnAAA=",
-          "-----END ECH CONFIGS-----"
-        ],
-        "dynamic_record_sizing_disabled": null,
-        "enabled": true,
-        "pq_signature_schemes_enabled": null
+      "tag": "server-3",
+      "type": "hysteria2",
+      "server": "45.62.116.246",
+      "server_port": 59323,
+      "password": "fWKWrmD8Eo",
+      "obfs": {
+        "type": "salamander",
+        "password": "fsaadssa"
       },
-      "enabled": true,
-      "insecure": true
-    },
-    "type": "hysteria2"
-  },
-  {
-    "__id_in_gui": "ID_nqgkh1je",
-    "obfs": {
-      "password": "fsaadssa",
-      "type": "salamander"
-    },
-    "password": "hSFHF9L8fu",
-    "server": "45.62.116.246",
-    "server_port": 59323,
-    "tag": "server-4",
-    "tls": {
-      "ech": {
-        "config": [
-          "-----BEGIN ECH CONFIGS-----",
-          "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",
-          "JycAAA==",
-          "-----END ECH CONFIGS-----"
-        ],
-        "dynamic_record_sizing_disabled": null,
+      "tls": {
         "enabled": true,
-        "pq_signature_schemes_enabled": true
-      },
-      "enabled": true,
-      "insecure": true
+        "server_name": "45.62.116.246",
+        "insecure": true
+      }
     },
-    "type": "hysteria2"
-  },
-  {
-    "__id_in_gui": "ID_cg0zovlf",
-    "server": "45.62.116.246",
-    "server_port": 31778,
-    "tag": "server-5",
-    "transport": {
-      "early_data_header_name": "Sec-WebSocket-Protocol",
-      "path": "/",
-      "type": "ws"
-    },
-    "type": "vless",
-    "uuid": "ac50fd2a-8651-4a71-b588-dd349f1c1197"
-  },
-  {
-    "__id_in_gui": "ID_k102lw9c",
-    "password": "hSFHF9L8fu",
-    "server": "45.62.116.246",
-    "server_port": 14454,
-    "tag": "server-6",
-    "tls": {
-      "enabled": true,
-      "insecure": true
-    },
-    "transport": {
-      "early_data_header_name": "Sec-WebSocket-Protocol",
-      "path": "/",
-      "type": "ws"
-    },
-    "type": "trojan"
-  },
-  {
-    "__id_in_gui": "ID_z1gv5sx6",
-    "multiplex": {},
-    "security": "aes-128-gcm",
-    "server": "45.62.116.246",
-    "server_port": 42810,
-    "tag": "server-7",
-    "transport": {
-      "early_data_header_name": "Sec-WebSocket-Protocol",
-      "path": "/safad",
-      "type": "ws"
-    },
-    "type": "vmess",
-    "uuid": "ac50fd2a-8651-4a71-b588-dd349f1c1197"
-  },
-  {
-    "__id_in_gui": "ID_sj4v52ev",
-    "password": "hSFHF9L8fu",
-    "server": "45.62.116.246",
-    "server_port": 17563,
-    "tag": "server-8",
-    "tls": {
-      "ech": {
-        "config": [
-          "-----BEGIN ECH CONFIGS-----",
-          "ADn+DQA1AAAgACAuXmkyANHFeEXFFDN0HCpnMrylPtVHWuH+9JUByVAJbAAIAAEA",
-          "AQABAAMAAicnAAA=",
-          "-----END ECH CONFIGS-----"
-        ],
-        "dynamic_record_sizing_disabled": null,
-        "enabled": true,
-        "pq_signature_schemes_enabled": null
-      },
-      "enabled": true,
-      "insecure": true
-    },
-    "transport": {
-      "early_data_header_name": "Sec-WebSocket-Protocol",
-      "path": "/",
-      "type": "ws"
-    },
-    "type": "trojan"
-  },
-  {
-    "__id_in_gui": "ID_6ci3msm6",
-    "password": "hSFHF9L8fu",
-    "server": "45.62.116.246",
-    "server_port": 10740,
-    "tag": "server-9",
-    "tls": {
-      "ech": {
-        "config": [
-          "-----BEGIN ECH CONFIGS-----",
-          "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",
-          "JycAAA==",
-          "-----END ECH CONFIGS-----"
-        ],
-        "dynamic_record_sizing_disabled": null,
-        "enabled": true,
-        "pq_signature_schemes_enabled": true
-      },
-      "enabled": true,
-      "insecure": true
-    },
-    "transport": {
-      "early_data_header_name": "Sec-WebSocket-Protocol",
-      "path": "/",
-      "type": "ws"
-    },
-    "type": "trojan"
-  },
     {
+      "tag": "server-4",
+      "type": "hysteria2",
+      "server": "45.62.116.246",
+      "server_port": 58249,
+      "password": "fWKWrmD8Eo",
+      "obfs": {
+        "type": "salamander",
+        "password": "adadfsfadsa"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "45.62.116.246",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "server-5",
+      "type": "hysteria2",
+      "server": "45.62.116.246",
+      "server_port": 48555,
+      "password": "fWKWrmD8Eo",
+      "obfs": {
+        "type": "salamander",
+        "password": "hsafsfjafs"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "45.62.116.246",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "server-6",
+      "type": "vless",
+      "server": "45.62.116.246",
+      "server_port": 26929,
+      "uuid": "62cce9f3-dbed-4131-8489-9ea2e956e8cc",
+      "tls": {
+        "enabled": true,
+        "server_name": "icloud.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "d5clWbM4WMeJSCHhM2raH2pZuk-5n_BRaJJt4UF0Qlw",
+          "short_id": "c1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "server-7",
+      "type": "vmess",
+      "server": "45.62.116.246",
+      "server_port": 50193,
+      "uuid": "35d0fe23-5099-4937-9967-fb9df6f953f1",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/35d0fe23"
+      }
+    },
+    {
+      "tag": "server-8",
+      "type": "vless",
+      "server": "45.62.116.246",
+      "server_port": 36015,
+      "uuid": "b6049749-c6f8-48fb-8c51-9e2e8bacbb94",
+      "tls": {
+        "enabled": true,
+        "server_name": "yahoo.com",
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "0r-_El-aCM0lsiCrKSwl6ZW0qBgtP26w_kDKryYK_G4",
+          "short_id": "107c647d"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        {
       "type": "direct",
       "tag": "direct"
     }
