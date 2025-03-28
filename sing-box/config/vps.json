@@ -97,7 +97,12 @@
       "type":"urltest",
       "outbounds":[
         "server-1",
-        "server-2"
+        "server-2",
+        "server-3",
+        "server-4",
+        "server-5",
+        "server-6",
+        "server-7"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -109,7 +114,12 @@
       "outbounds":[
         "direct",
         "server-1",
-        "server-2"
+        "server-2",
+        "server-3",
+        "server-4",
+        "server-5",
+        "server-6",
+        "server-7"
       ]
     },
     {
@@ -118,7 +128,12 @@
       "outbounds":[
         "direct",
         "server-1",
-        "server-2"
+        "server-2",
+        "server-3",
+        "server-4",
+        "server-5",
+        "server-6",
+        "server-7"
       ]
     },
     {
@@ -127,7 +142,12 @@
       "outbounds":[
         "direct",
         "server-1",
-        "server-2"
+        "server-2",
+        "server-3",
+        "server-4",
+        "server-5",
+        "server-6",
+        "server-7"
       ]
     },
     {
@@ -136,7 +156,12 @@
       "outbounds":[
         "direct",
         "server-1",
-        "server-2"
+        "server-2",
+        "server-3",
+        "server-4",
+        "server-5",
+        "server-6",
+        "server-7"
       ]
     },
     {
@@ -145,7 +170,12 @@
       "outbounds":[
         "direct",
         "server-1",
-        "server-2"
+        "server-2",
+        "server-3",
+        "server-4",
+        "server-5",
+        "server-6",
+        "server-7"
       ]
     },
     {
@@ -154,7 +184,12 @@
       "outbounds":[
         "direct",
         "server-1",
-        "server-2"
+        "server-2",
+        "server-3",
+        "server-4",
+        "server-5",
+        "server-6",
+        "server-7"
       ]
     },
     {
@@ -163,35 +198,125 @@
       "outbounds":[
         "direct",
         "server-1",
-        "server-2"
+        "server-2",
+        "server-3",
+        "server-4",
+        "server-5",
+        "server-6",
+        "server-7"
       ]
     },
     {
       "tag": "server-1",
       "type": "trojan",
-      "server": "your server.com",
-      "server_port": 443,
-      "password": "your password",
+      "server": "45.62.116.246",
+      "server_port": 14454,
+      "password": "IzcW1Mz7be",
       "tls": {
         "enabled": true,
-        "insecure": false,
-        "server_name": "your server.com"
+        "server_name": "45.62.116.246",
+        "insecure": true
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/"
       }
     },
     {
       "tag": "server-2",
-      "type": "tuic",
-      "server": "your server.com",
-      "server_port": 12345,
-      "uuid": "your uuid",
-      "password": "your password",
-      "congestion_control": "bbr",
+      "type": "vless",
+      "server": "45.62.116.246",
+      "server_port": 31778,
+      "uuid": "b0c3ed0c-111f-4cf6-eb30-6df59bb6b292",
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/"
+      }
+    },
+    {
+      "tag": "server-3",
+      "type": "hysteria2",
+      "server": "45.62.116.246",
+      "server_port": 59323,
+      "password": "fWKWrmD8Eo",
+      "obfs": {
+        "type": "salamander",
+        "password": "fsaadssa"
+      },
       "tls": {
+        "enabled": true,
+        "server_name": "45.62.116.246",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "server-4",
+      "type": "hysteria2",
+      "server": "45.62.116.246",
+      "server_port": 58249,
+      "password": "fWKWrmD8Eo",
+      "obfs": {
+        "type": "salamander",
+        "password": "adadfsfadsa"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "45.62.116.246",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "server-5",
+      "type": "hysteria2",
+      "server": "45.62.116.246",
+      "server_port": 48555,
+      "password": "fWKWrmD8Eo",
+      "obfs": {
+        "type": "salamander",
+        "password": "hsafsfjafs"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "45.62.116.246",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "server-6",
+      "type": "vless",
+      "server": "45.62.116.246",
+      "server_port": 26929,
+      "uuid": "62cce9f3-dbed-4131-8489-9ea2e956e8cc",
+      "tls": {
+        "enabled": true,
+        "server_name": "icloud.com",
+        "insecure": false,
+        "reality": {
           "enabled": true,
-          "server_name": "your server.com",
-          "alpn": [
-              "h3"
-          ]
+          "public_key": "d5clWbM4WMeJSCHhM2raH2pZuk-5n_BRaJJt4UF0Qlw",
+          "short_id": "c1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "tag": "server-7",
+      "type": "vmess",
+      "server": "45.62.116.246",
+      "server_port": 50193,
+      "uuid": "35d0fe23-5099-4937-9967-fb9df6f953f1",
+      "security": "auto",
+      "alter_id": 0,
+      "transport": {
+        "type": "ws",
+        "headers": {},
+        "path": "/35d0fe23"
       }
     },
     {
