@@ -309,7 +309,7 @@
       "tag": "server-7",
       "type": "vmess",
       "server": "45.62.116.246",
-      "server_port": 50193,
+      "server_port": 33353,
       "uuid": "35d0fe23-5099-4937-9967-fb9df6f953f1",
       "security": "auto",
       "alter_id": 0,
